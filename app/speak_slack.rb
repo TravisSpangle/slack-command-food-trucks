@@ -5,6 +5,7 @@ module FoodTruck
   class SpeakSlack
     def self.trucks(trucks: [])
       msg = ""
+      trucks.uniq!
       trucks.each do |truck|
         msg << "\n#{truck}"
       end
