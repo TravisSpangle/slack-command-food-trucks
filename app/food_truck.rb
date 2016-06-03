@@ -1,1 +1,25 @@
 # Retrieves food-truck feed and parses it
+
+require_relative '../constants'
+require 'httparty'
+require 'nokogiri'
+
+module FoodTruck
+  class FoodTruck
+    attr_reader :trucks
+    def initialize(url: FOOD_TRUCK_URL)
+      set_trucks url
+    end
+
+    private
+    def set_trucks(url)
+      request = HTTParty.get(url)
+      page = Nokogiri::HTML(request.body)
+      @trucks = parse_trucks(page)
+    end
+
+    def parse_trucks(page)
+      page.css('ul.simcal-events')[0].css('span.simcal-event-title').map{ |n| n.text } || []
+    end
+  end
+end
