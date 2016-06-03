@@ -8,7 +8,7 @@ module FoodTruck
     get '/api' do
       ft = FoodTruck.new
 
-      SpeakSlack.trucks(trucks: ft.trucks )
+      SpeakSlack.trucks(trucks: ft.trucks)
     end
   end
 end

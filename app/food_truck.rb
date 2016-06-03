@@ -8,18 +8,19 @@ module FoodTruck
   class FoodTruck
     attr_reader :trucks
     def initialize(url: FOOD_TRUCK_URL)
-      set_trucks url
+      load_trucks_from(url)
     end
 
     private
-    def set_trucks(url)
+
+    def load_trucks_from(url)
       request = HTTParty.get(url)
       page = Nokogiri::HTML(request.body)
       @trucks = parse_trucks(page)
     end
 
     def parse_trucks(page)
-      page.css('ul.simcal-events')[0].css('span.simcal-event-title').map{ |n| n.text } || []
+      page.css('ul.simcal-events')[0].css('span.simcal-event-title').map(&:text) || []
     end
   end
 end
