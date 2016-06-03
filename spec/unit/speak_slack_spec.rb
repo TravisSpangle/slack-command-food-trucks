@@ -13,6 +13,9 @@ module FoodTruck
         it 'lists food trucks in a slack format' do
           expect(SpeakSlack.trucks(trucks:['one','two'])).to match(/one\ntwo/)
         end
+        it 'lists uniq food trucks' do
+          expect(SpeakSlack.trucks(trucks:['one','two','two'])).to be("one\ntwo")
+        end
       end
     end
   end
