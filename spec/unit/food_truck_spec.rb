@@ -5,7 +5,7 @@ module FoodTruck
   RSpec.describe FoodTruck do
     describe 'FoodTruck loads data' do
       it 'provides food truck names' do
-        ft = FoodTruck.new(url: FOOD_TRUCK_URL)
+        ft = FoodTruck.new
 
         expect(ft.trucks.class).to be(Array)
         expect(ft.trucks.length).to be > 1
