@@ -13,9 +13,7 @@ module FoodTruck
         it 'lists food trucks in a slack format' do
           expect(ViewTrucks.slack(trucks: %w(one two))).to match(/one\ntwo/)
         end
-        it 'lists uniq food trucks' do
-          expect(ViewTrucks.slack(trucks: %w(one two two))).to match("one\ntwo")
-        end
+        it 'lists uniq food trucks'
       end
     end
   end
