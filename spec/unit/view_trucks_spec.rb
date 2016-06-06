@@ -6,7 +6,7 @@ module FoodTruck
     describe 'ViewTrucks says' do
       context 'when passed an empty array' do
         it 'food trucks cannot be found' do
-          expect(ViewTrucks.slack).to be(MSG_NO_FOOD_TRUCKS)
+          expect(ViewTrucks.slack(trucks:[])).to be(MSG_NO_FOOD_TRUCKS)
         end
       end
       context 'when passed an array with food trucks' do
