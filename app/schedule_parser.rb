@@ -5,7 +5,7 @@ require 'httparty'
 require 'nokogiri'
 
 module FoodTruck
-  class FoodTruck
+  class ScheduleParser
     attr_reader :trucks
     def initialize(url: FOOD_TRUCK_URL)
       load_trucks_from(url)
