@@ -2,8 +2,8 @@
 require_relative '../constants'
 
 module FoodTruck
-  class SpeakSlack
-    def self.trucks(trucks: [])
+  class ViewTrucks
+    def self.slack(trucks: [])
       msg = ""
       trucks.uniq!
       trucks.each do |truck|
