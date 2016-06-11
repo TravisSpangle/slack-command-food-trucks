@@ -7,10 +7,10 @@ module FoodTruck
       file = File.open("./spec/unit/sample_data.htm", "rb")
       parser = ScheduleParser.new(file.read)
 
-      expect(parser.trucks).to eq(["Falafel Salam", 
-                                  "NOSH", 
-                                  "Seattle Chicken Over Rice",
-                                  "Anchor End Pretzel Shoppe"])
+      expect(parser.trucks).to eq(["Falafel Salam",
+                                   "NOSH",
+                                   "Seattle Chicken Over Rice",
+                                   "Anchor End Pretzel Shoppe"])
     end
 
     it 'provides a blank array with no results' do

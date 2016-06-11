@@ -17,7 +17,7 @@ module FoodTruck
       todays_trucks = page.css('ul.simcal-events')[0]
       if todays_trucks
         todays_trucks.css('span.simcal-event-title').map(&:text)
-      else  
+      else
         []
       end
     end
