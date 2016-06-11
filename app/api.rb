@@ -5,7 +5,7 @@ require_relative 'view_trucks'
 
 module FoodTruck
   class API < Sinatra::Base
-    get '/api' do
+    get '/food-trucks' do
       sp = ScheduleParser.new
 
       ViewTrucks.slack(trucks: sp.trucks)

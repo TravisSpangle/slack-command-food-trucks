@@ -11,7 +11,7 @@ module FoodTruck
 
     describe 'provides message' do
       it 'of listed food trucks' do
-        get '/api'
+        get '/food-trucks'
         expect(last_response.status).to eq(200)
       end
     end
