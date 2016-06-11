@@ -2,6 +2,8 @@
 
 Provides slash command to list food trucks in neighborhood. Runs on Sinatra using RSpec for TDD.
 
+![view in slack](https://raw.githubusercontent.com/TravisSpangle/slack-command-food-trucks/master/sample.png)
+
 # Customizing
 
 The URL containing the data  needs to be configured constants.rb in FOOD_TRUCK_URL
