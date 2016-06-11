@@ -1,14 +1,16 @@
 # Handles web request/response
 require 'sinatra/base'
 require_relative 'schedule_parser'
+require_relative 'schedule_fetcher'
 require_relative 'view_trucks'
 
 module FoodTruck
   class API < Sinatra::Base
     get '/food-trucks' do
-      sp = ScheduleParser.new
+      page = ScheduleFetcher.retrieve
+      parser = ScheduleParser.new(page)
 
-      ViewTrucks.slack(sp.trucks)
+      ViewTrucks.slack(parser.trucks)
     end
   end
 end
