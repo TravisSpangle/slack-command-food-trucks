@@ -1,6 +1,4 @@
 # Retrieves food-truck feed and parses it
-
-require_relative '../constants'
 require 'nokogiri'
 
 module FoodTruck
