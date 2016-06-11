@@ -13,13 +13,6 @@ module FoodTruck
 
     private
 
-    # ToDo remove this method
-    def load_trucks_from(url)
-      request = HTTParty.get(url)
-      page = Nokogiri::HTML(request.body)
-      @trucks = parse_trucks(page)
-    end
-
     def parse_trucks(page)
       todays_trucks = page.css('ul.simcal-events')[0]
       if todays_trucks
