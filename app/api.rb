@@ -10,7 +10,7 @@ module FoodTruck
       page = ScheduleFetcher.retrieve
       parser = ScheduleParser.new(page)
 
-      ViewTrucks.slack(parser.trucks)
+      ViewTrucks.slack(parser.trucks.uniq)
     end
   end
 end
