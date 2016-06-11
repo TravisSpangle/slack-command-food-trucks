@@ -9,11 +9,10 @@ module FoodTruck
       API.new
     end
 
-    describe 'provides message' do
-      it 'of listed food trucks' do
-        get '/food-trucks'
-        expect(last_response.status).to eq(200)
-      end
+    it 'lists uniq food trucks' do
+      get '/food-trucks'
+      expect(last_response.status).to eq(200)
+      expect(last_response.body).to eq("Falafel Salam\nNOSH\nSeattle Chicken Over Rice\nAnchor End Pretzel Shoppe")
     end
   end
 end
