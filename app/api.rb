@@ -8,7 +8,7 @@ module FoodTruck
     get '/food-trucks' do
       sp = ScheduleParser.new
 
-      ViewTrucks.slack(trucks: sp.trucks)
+      ViewTrucks.slack(sp.trucks)
     end
   end
 end

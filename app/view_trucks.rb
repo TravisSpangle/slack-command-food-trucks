@@ -3,7 +3,7 @@ require_relative '../constants'
 
 module FoodTruck
   class ViewTrucks
-    def self.slack trucks:
+    def self.slack(trucks)
       if trucks.empty?
         MSG_NO_FOOD_TRUCKS
       else
